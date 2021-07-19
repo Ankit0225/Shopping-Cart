@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize')
 
-const DataTypes = Sequelize.DataTypes
 
 const db = new Sequelize('shopping_cart_db', 'owner', 'shopping_covid',{
     dialect: 'mysql',
@@ -15,22 +14,35 @@ const db = new Sequelize('shopping_cart_db', 'owner', 'shopping_covid',{
 
 const User = db.define('owner' ,{
     id: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
     },
     name: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
     }
 })
 
 const Products = db.define('products', {
     id: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
     },
-    name: DataTypes.STRING
-    
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    manufacturer: Sequelize.STRING,
+    price: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
+        defaultValue: 0.0
+    }
+
 })
+
+module.exports = {
+    User, Products
+}
