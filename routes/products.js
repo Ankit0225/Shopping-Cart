@@ -1,4 +1,4 @@
-const Product = require('../db').Product
+const Product = require('../db').Products
 
 const route = require('express').Router();
 
@@ -16,5 +16,26 @@ route.get('/', (req,res) => {
 })
 route.post('/', (req,res) => {
 //  Add A Product
+    
+    if(isNaN(req.body.price)) {
+        return res.status(404).send({
+            error: "Price is not valid"
+        })
+    }
+    // Product Created Here
+    Product.create({
+        name: req.body.name,
+        manufacturer: req.body.manufacturer,
+        price: parseFloat(req.body.price)
+    }).then((product) => {
+        res.status(201).send(product)
+    }).catch((err) => {
+        res.status(501).send({
+            error: "Error while Adding a Product"
+        })
+    })
 })
+
+
+
 exports = module.exports = route
