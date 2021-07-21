@@ -1,3 +1,5 @@
+const Product = require('../db').Product
+
 const route = require('express').Router();
 
 

@@ -43,7 +43,7 @@ const Products = db.define('products', {
 
 })
 
-db.sync()
+db.sync() //db.sunc is a promise
   .then(() => console.log('Database Established'))
   .catch((err) => console.error("Unable to Establish Database", err))
 
