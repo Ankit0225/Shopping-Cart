@@ -1,11 +1,11 @@
 
-function fetchproducts(alldone) {
-    $.get('/routes/products' , function (data) {
-      alldone(data)
-    })
-}
-
-
 $(function () {
-    let product = $('#product')
+ let productitem = $('#product-item')
+
+ fetchproducts(function (products) {
+     productitem.empty()
+     for(product of products) {
+         productitem.append(createcard(product))
+     }
+ })
 })

@@ -4,26 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
     <link rel="icon" href="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/green_shoppictcart_1484336527-1.png">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Main Script File -->
+    <!--Main Script File -->
     <script src="./script.js"></script>
-    <script src="./shopping-cart.js"></script>
-    <title>Shopping Cart</title>
+    <script src="./products.js"></script>
 </head>
 <body>
-   <div class="container">
-       <div class="row">
-           <h3 class="header p-3 text-center">Shop</h3>
-       </div>
-       <div class="row" id="product-item">
-          
-           </div>
-       </div>
-   </div>
+    <div class="container p-3">
+        <h4 class="text-center">Add Product</h4>
+        <div class="row">
+            <div class="col-6 m-3 p-3">
+                <form>
+                    <div class="form-group m-3">
+                        <label for="Product-Name">Product Name</label>
+                        <input type="text" class="Product-Name">
+                    </div>
+                    <div class="form-group m-3">
+                        <label for="Product-Manufacturer">Manufacturer </label>
+                        <input type="text" class="Product-Manufacturer">
+                    </div>
+                    <div class="form-group m-3">
+                        <label for="Product-Price">Price </label>
+                        <input type="number" class="Product-Price">
+                    </div>
+                    <button id="AddProduct" class="btn btn-outline-secondary">Add</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
 </body>
 </html>
