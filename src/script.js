@@ -1,12 +1,12 @@
 
 function fetchproducts(alldone) {
-    $.get('/routes/products' , function (data) {
+    $.get('/api/products' , function (data) {
       alldone(data)
     })
 }
 
 function AddProduct(name, manufacturer, price, done) {
-   $.post('/routes/products', {
+   $.post('/api/products', {
        name: name,
        manufacturer: manufacturer,
        price: price,
